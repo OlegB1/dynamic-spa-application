@@ -1,0 +1,184 @@
+html, body {
+    font-family: 'Open Sans', sans-serif;
+    height: 100%;
+}
+body {
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.04) 50%, rgba(0, 0, 0, 0));
+    background-repeat: repeat;
+    background-position: 50% 100%;
+    background-size: 0.23% 1px;
+}
+
+/*menu navigation*/
+
+.menu{
+    float: left;
+    width: 20%;
+    padding: 0;
+    height: 100%;
+    background-color: #2e3340;
+}
+.menu-overview, .menu-main {
+    background-color: #2e3340;
+    height: 40px;
+    padding-left: 35px;
+    text-decoration: none;
+}
+.menu-main{
+    padding-bottom: 10px;
+    border: 1px solid #2e3340;
+    margin-top: 30px;
+    font-size: 36px;
+    display: block;
+    color: gray;
+}
+.menu-overview{
+    padding-top: 9px;
+    border: 1px solid #2e3340;
+    margin-top:90px;
+    font-size: 18px;
+    display: block;
+}
+.menu-overview, .menu-main:hover{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.active{
+    background-color: #ff1b55;
+    color: #FFFFFF;
+}
+
+/*content*/
+
+.page-content {
+    display: block;
+}
+.items{
+    margin-left: 2.2%;
+    margin-top: 30px;
+    padding-top: 20px;
+    display: inline-block;
+    width: 37.7%;
+    border: 1px solid gainsboro;
+    border-radius: 3px;
+    background-color: white;
+    box-shadow: 1px -1px 5px 0px rgba(0,0,0,0.22);
+    padding-bottom: 18%;
+}
+.items-item-label{
+    font-size: 30px;
+    padding-left: 6%;
+
+}
+.items-input{
+    margin-left: 6%;
+    width: 58.8%;
+    border-radius: 4px;
+    padding: 10px;
+    border: 1px solid gray;
+    font-size: 14px;
+    opacity: 0.5;
+}
+.items-item{
+    outline: none;
+    font-size: 12px;
+    height: 59px;
+    border-bottom: 1px solid rgba(128,128,128,0.5);
+}
+.item-active{
+    border-left: 3px solid red;
+
+}
+.item-name{
+    display: inline-block;
+    font-weight: bold;
+    margin-top: 20px;
+    padding-left: 30px;
+
+}
+.add-btn{
+    color: white;
+    margin-right: 1%;
+    display: inline-block;
+    background-color: #00cdbf;
+    width: 28%;
+    min-height: 38px;
+    text-align: center;
+    border-radius: 4px;
+    margin-top: 0px;
+    float: right;
+    border: none;
+}
+
+.btn-delete{
+    margin-top: 12px;
+    margin-right: 2%;
+    display: inline-block;
+    width: 20%;
+    height: 37px;
+    border-radius: 2px;
+    border: 1px solid #ffa7ba;
+    color: #ffa7ba;
+    background-color: #FFFFFF;
+    float: right;
+}
+
+.comments{
+    margin-right: 1.5%;
+    margin-top: 30px;
+    padding-top: 20px;
+    display: inline-block;
+    float: right;
+    width: 35.4%;
+    background-color: white;
+    border: 1px solid gainsboro;
+    padding-left: 1.85%;
+    box-shadow: 1px -1px 5px 0px rgba(0,0,0,0.22);
+}
+
+.comment-wrapper{
+    margin-right: 22px;
+    padding-top: 13px;
+    padding-bottom: 22px;
+    height: auto;
+    border-bottom: 1px solid rgba(128,128,128,0.5);
+}
+.comment .comment-square {
+    width: 15%;
+    height: 60px;
+    display: inline-block;
+}
+.comment:nth-child(even) .comment-square {
+    background: red;
+}
+.comment:nth-child(odd) .comment-square {
+    background: green;
+}
+.comment-comment {
+    display: inline-block;
+    margin-left: 16px;
+    width: 78%;
+    float: right;
+}
+.square-gray {
+    width: 15%;
+    height: 60px;
+    background: lightgray;
+    float: left;
+}
+.comments-input{
+    position: relative;
+    min-height: 75px;
+    width: 78%;
+    float: right;
+    margin-right: 4%;
+    margin-bottom: 16px;
+}
+.nonedisplay{
+    display: none;
+}
+

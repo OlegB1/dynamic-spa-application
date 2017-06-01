@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TEST</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
+    <link href="index.css" type="text/css" rel="stylesheet">
+
+</head>
+<body ng-app="app">
+<div class="menu">
+    <a class="menu-main" ui-sref="home" ui-sref-active="active">Main</a>
+    <a class="menu-overview" ui-sref="overview" ui-sref-active="active">Overview</a>
+</div>
+<ui-view></ui-view>
+<script src="index.js" type="text/javascript"></script>
+</body>
+</html>
+
