@@ -71,7 +71,3 @@ app.controller('appController', function ($scope, $window) {
             [];
     }
 });
-
-
-// css hierarchy
-// css class hames: btn-add, border-order

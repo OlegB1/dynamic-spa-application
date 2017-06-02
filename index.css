@@ -153,10 +153,10 @@ body {
     display: inline-block;
 }
 .comment:nth-child(even) .comment-square {
-    background: red;
+    background: #ff8a00;
 }
 .comment:nth-child(odd) .comment-square {
-    background: green;
+    background: #47568c;
 }
 .comment-comment {
     display: inline-block;
