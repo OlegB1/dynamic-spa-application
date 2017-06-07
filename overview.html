@@ -1,34 +1,33 @@
-<div ng-controller="appController">
-    <div class="page-content">
-        <div class="items">
-            <div class="items-item-label">Items</div>
-            <form>
-                <input ng-model="newItemName" class="items-input" placeholder="Type name here..." required>
-                <button ng-click="addItem(newItemName)" class="add-btn">Add new</button>
-            </form>
-            <div ng-repeat="item in items track by $index">
-                <div tabindex="0" ng-click="selectItem(item)" class="items-item {{item === activeItem ? 'item-active' : ''}}">
-                    <div class="item-name">{{item.name}}</div>
-                    <span class="item-length">{{item.comments.length}}</span>
+<div class="page-content" ng-controller="appController">
+    <div class="items">
+        <div class="items-item-label">Items</div>
+        <form>
+            <input ng-model="newItemName" class="items-input" placeholder="Type name here..." required>
+            <button ng-click="addItem(newItemName)" class="add-btn">Add new</button>
+        </form>
+        <div ng-repeat="item in items track by $index">
+            <div tabindex="0" ng-click="selectItem(item)" class="items-item {{item === selectedItem ? 'item-active' : ''}}">
+                <div class="item-wrapper">
+                    <div class="item-name">{{item.name}}
+                        <div class="item-length">{{item.comments.length}}</div>
+                    </div>
                     <button ng-click="deleteItem(item)" class="btn-delete">Delete</button>
                 </div>
             </div>
         </div>
-        <div class="comments" ng-show="activeItem">
-            <h2>Comments #{{items.indexOf(activeItem) + 1}}</h2>
-            <div ng-repeat="comment in activeItem.comments track by $index" class="comment">
-                    <div class="comment-square"></div>
-                    <div class="comment-comment">{{comment}}</div>
-
-            </div>
-            <div style="margin-top: 40px">
-                <span class="square-gray"></span>
-                <form>
-                    <input class="comments-input" ng-model="newComment">
-                    <button ng-click="addComment(activeItem, newComment)" class="add nonedisplay">Add new</button>
-                </form>
-            </div>
+    </div>
+    <div class="comments" ng-show="selectedItem">
+        <h2>Comments #{{items.indexOf(selectedItem) + 1}}</h2>
+        <div ng-repeat="comment in selectedItem.comments track by $index" class="comment comment-wrapper">
+            <div class="comment-square"></div>
+            <div class="comment-comment">{{comment}}</div>
+        </div>
+        <div style="margin-top: 40px">
+            <span class="square-gray"></span>
+            <form>
+                <input class="comments-input" ng-model="newComment">
+                <button ng-click="addComment(selectedItem, newComment)" class="btn-comment">Add new</button>
+            </form>
         </div>
     </div>
 </div>
-

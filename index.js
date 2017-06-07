@@ -8,7 +8,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'overview.html'
         })
         .state('home', {
-            url: "/home"
+            url: "/home",
+            templateUrl: 'home.html'
         });
 
     $urlRouterProvider.otherwise('/overview');
@@ -16,12 +17,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
 app.controller('appController', function ($scope, $window) {
 
-    $scope.items = restoreItems();
-    $scope.activeItem = $scope.items[0];
-
+   $scope.items = restoreItems();
+   $scope.selectedItem = $scope.items[0];
     $scope.newItemName = '';
     $scope.newComment = '';
-
 
     $scope.addItem = function(name) {
         if (!name) return;
@@ -32,7 +31,7 @@ app.controller('appController', function ($scope, $window) {
         };
 
         $scope.items.push(item);
-        $scope.activeItem = item;
+        $scope.selectedItem = item;
         $scope.newItemName = '';
         storeItems();
     };
@@ -40,17 +39,12 @@ app.controller('appController', function ($scope, $window) {
     $scope.deleteItem = function(item) {
         var itemIndex = $scope.items.indexOf(item);
         $scope.items.splice(itemIndex, 1);
+        $scope.selectedItem = $scope.items[0];
         storeItems();
-
-        if ($scope.items.length > 0) {
-            $scope.activeItem = $scope.items[$scope.items.length-1];
-        } else {
-            delete $scope.activeItem;
-        }
     };
 
     $scope.selectItem = function(item) {
-        $scope.activeItem = item;
+        $scope.selectedItem = item;
     };
 
     $scope.addComment = function(item, comment) {
@@ -66,8 +60,6 @@ app.controller('appController', function ($scope, $window) {
 
     function restoreItems() {
         var data = $window.localStorage.getItem(storageKey);
-        return data ?
-            JSON.parse(data) :
-            [];
+        return data ? JSON.parse(data) : [];
     }
 });
